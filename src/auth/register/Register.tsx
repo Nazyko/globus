@@ -6,6 +6,7 @@ export const Register = () => {
     <div className="register">
         <div className="register__inner">
             <h3 className="register__title">Регистрация</h3>
+
             <div className="register__container">
                 <div className="register__input-box">
                     <label className="input-box__label">Фамилия:</label>
@@ -16,6 +17,10 @@ export const Register = () => {
                     <input type="text" placeholder="Введите Имя"/>
                 </div>
                 <div className="register__input-box">
+                    <label className="input-box__label">Дата рождения:</label>
+                    <input type="date" />
+                </div>
+                <div className="register__input-box">
                     <label className="input-box__label">Телефон:</label>
                     <input type="text" placeholder="Введите Телефон"/>
                 </div>
@@ -23,27 +28,23 @@ export const Register = () => {
                     <label className="input-box__label">Пароль:</label>
                     <input type="text" placeholder="Пароль"/>
                 </div>
-                <div className="register__date-box">
-                    <label className="input-box__label">Введите день рождения:</label>
-                    <input type="date" />
-                </div>
+                
                 <div className="register__gender-box">
-                    <label>
+                    <label className="gender-box__label">
                         <input type="radio" name="gender" value='male'/>
-                        Male
+                        Мужчина
                     </label>
-                    <label>
+                    <label className="gender-box__label">
                         <input type="radio" name="gender" value='female'/>
-                        Female
+                        Женщина
                     </label>
                 </div>
             </div>
             
             <button className="register__btn">Регистрация</button>
             <label>Уже есть аккаунт? <Link to="/login">Авторизация</Link></label>
-            <p>
-                Нажав на кнопку "Подписаться", Вы соглашаетесь с 
-                <Link to=''>политикой конфиденциальности</Link>
+            <p className="privacy-text">
+                Нажав на кнопку "Подписаться", Вы соглашаетесь с <Link to=''>политикой конфиденциальности</Link>
             </p>
         </div>
     </div>

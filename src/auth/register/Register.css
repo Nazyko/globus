@@ -14,13 +14,14 @@
     padding: 20px 22px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 10px;
     border: 1px solid #DDDDDD;
 }
 
 @media (min-width: 1440px) {
     .register__inner {
-        width: 400px;
+        width: 900px;
     }
 }
 
@@ -46,5 +47,72 @@
 }
 
 .register__container {
-    
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (min-width: 1440px) {
+    .register__container {
+        gap: 16px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.register__input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-box__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.register__input-box input {
+    height: 45px;
+    padding: 0 16px;
+    border: 1px solid #CBCBCB;
+    outline: none;  
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.1px;
+}
+
+@media (min-width: 1440px) {
+    .register__input-box input {
+        width: 400px;
+    }
+}
+
+.register__input-box input:focus {
+    border: 1px solid #000000;
+} 
+
+.register__gender-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px
+}
+
+.gender-box__label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.register__btn {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 15px 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17.25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    outline: none;  
 }
