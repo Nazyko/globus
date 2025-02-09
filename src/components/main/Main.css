@@ -1,0 +1,25 @@
+.main {
+    padding: 80px 0 10px;
+    width: 100%;
+    background-color: #bdbcbc;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 1440px) {
+    .main {
+        padding: 50px 0;
+    }
+}
+
+.main__img {
+    width: 200px;
+}
+
+@media (min-width: 1440px) {
+    .main__img {
+        width: 400px;
+    }
+}

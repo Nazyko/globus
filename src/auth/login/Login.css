@@ -1,0 +1,106 @@
+.login {
+    height: 90vh;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.login__inner {
+    width: 299px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+@media (min-width: 1440px) {
+    .login__inner {
+        width: 400px;
+    }
+}
+
+.login__inner a {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #000000;
+}
+
+.login__title {
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 25.65px;
+    letter-spacing: 0.2px;
+    margin-bottom: 4px;
+}
+
+@media (min-width: 1440px) {
+    .login__title {
+        font-size: 24px;
+        line-height: 32.4px;
+    }
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (min-width: 1440px) {
+    .login__container {
+        gap: 16px;
+    }
+}
+
+.login__input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-box__label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+.login__input-box input {
+    height: 45px;
+    padding: 0 16px;
+    border: 1px solid #CBCBCB;
+    outline: none;  
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.1px;
+}
+
+.login__input-box input:focus {
+    border: 1px solid #000000;
+}   
+
+.login__forgot-pass {
+    width: 83px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-decoration-style: solid;
+    text-decoration-thickness: Auto;
+}
+
+.login__btn {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 15px 0;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 17.25px;
+    background-color: #000000;
+    color: #FFFFFF;
+    outline: none;
+}
+

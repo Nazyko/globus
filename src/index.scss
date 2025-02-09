@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Styrene';
+    src: url('./fonts/StyreneA-Thin.woff2') format('woff2'),
+        url('./fonts/StyreneA-Thin.woff') format('woff');
+    font-style: normal;
+    font-weight: 300;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    font-family: 'Styrene';
+    font-weight: 400;
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.wrapper {
+    padding: 0 16px;
+}
+
+@media (min-width: 1440px) {
+    .wrapper {
+        padding: 0 150px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
