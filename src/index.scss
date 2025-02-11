@@ -6,6 +6,22 @@
     font-weight: 300;
 }
 
+@font-face {
+    font-family: 'Styrene';
+    src: url('./fonts/StyreneA-Regular.woff2') format('woff2'),
+        url('./fonts/StyreneA-Regular.woff') format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Styrene';
+    src: url('./fonts/StyreneA-medium.woff2') format('woff2'),
+        url('./fonts/StyreneA-medium.woff') format('woff');
+    font-style: normal;
+    font-weight: 500;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +42,17 @@
     .wrapper {
         padding: 0 150px;
     }
+}
+
+@media (min-width: 1600px) {
+    .wrapper {
+        width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+.container {
+    padding: 0 40px;
 }
 
 a {

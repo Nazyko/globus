@@ -14,6 +14,13 @@
     }
 }
 
+@media (min-width: 1600px) {
+    .main {
+        width: 1600px;
+        margin: 0 auto;
+    }
+}
+
 .main__img {
     width: 200px;
 }

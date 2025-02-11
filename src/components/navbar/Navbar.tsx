@@ -6,8 +6,12 @@ import Search from "../../assets/navbar/search.svg"
 import Like from "../../assets/navbar/like.svg"
 import ShopCart from "../../assets/navbar/shop-cart.svg"
 import { Link } from "react-router-dom"
+import { useState } from "react"
+import { CategoryList } from "../category/category-list/CategoryList"
 
 export const Navbar = () => {
+  const [openCatalog, setOpenCatalog] = useState<boolean>(false)
+
   return (
     <div className="wrapper">
       <div className="navbar">
@@ -15,32 +19,34 @@ export const Navbar = () => {
             <div className="navbar__menu-burger">
                 <img src={Burger} alt="" />
             </div>
-            <div className="navbar__logo">
+            <Link to='/' className="navbar__logo">
                 <img src={Logo} alt="" />
-            </div>
+            </Link>
+            <button className="catalog-btn" onClick={() => setOpenCatalog(!openCatalog)}>Каталог</button>
             <div className="navbar__menu-list">
-              <Link to=''>Каталог</Link>
-              <Link to=''>Доставка</Link>
-              <Link to=''>Оплата</Link>
-              <Link to=''>О нас</Link>
-              <Link to=''>Контакты</Link>
+              <Link to='/'>О нас</Link>
+              <Link to='/'>Доставка</Link>
+              <Link to='/'>Оплата</Link>
+              <Link to='/'>Контакты</Link>
             </div>
         </div>
         <div className="navbar__right">
             <Link to='/login'>
                 <img src={User} alt=""/>
             </Link>
-            <div>
+            <Link to='/'>
                 <img src={Search} alt=""/>
-            </div>
-            <div>
+            </Link>
+            <Link to='/'>
                 <img src={Like} alt=""/>
-            </div>
-            <div>
+            </Link>
+            <Link to='/'>
                 <img src={ShopCart} alt=""/>
-            </div>
+            </Link>
         </div>
       </div>
+
+      <CategoryList active={openCatalog} setActive={setOpenCatalog}/>
     </div>
   )
 }

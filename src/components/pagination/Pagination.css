@@ -1,0 +1,40 @@
+.pagination {
+    padding: 32px 85.6px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; 
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.pagination__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32.4px;
+    letter-spacing: 0%;
+}
+
+.pagination-control-btn {
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.pagination__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.pagination__item {
+    width: 244px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pagination__item img{
+    width: 244px;
+    height: 279px;
+}
