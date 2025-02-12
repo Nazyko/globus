@@ -1,0 +1,22 @@
+.category-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;    
+}
+
+.category-item {
+    width: 250px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.category-item img {
+    width: 250px;
+    height: 300px;
+    margin-bottom: 10px;
+}

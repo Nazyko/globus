@@ -2,7 +2,7 @@ import React from 'react'
 import "./CategoryList.css"
 import { getCategoryById, getCategoryList } from '../../../service/ProductsService'
 import { useQuery } from '@tanstack/react-query'
-import { CategoryListResponse } from '../../../types/response/CatergoryResponse'
+import { CategoryListResponse } from '../../../types/response/ProductResponse'
 import { Center, Flex, Loader } from '@mantine/core'
 import { Link } from 'react-router-dom'
 

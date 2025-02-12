@@ -1,10 +1,10 @@
 import "./Navbar.css"
 import Burger from "../../assets/navbar/List.svg"
 import Logo from "../../assets/navbar/GLOBUS.svg"
-import User from "../../assets/navbar/user.svg"
-import Search from "../../assets/navbar/search.svg"
-import Like from "../../assets/navbar/like.svg"
-import ShopCart from "../../assets/navbar/shop-cart.svg"
+import UserIcon from "../../assets/navbar/user.svg"
+import SearchIcon from "../../assets/navbar/search.svg"
+import LikeIcon from "../../assets/navbar/like.svg"
+import ShopCartIcon from "../../assets/navbar/shop-cart.svg"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { CategoryList } from "../category/category-list/CategoryList"
@@ -32,16 +32,16 @@ export const Navbar = () => {
         </div>
         <div className="navbar__right">
             <Link to='/login'>
-                <img src={User} alt=""/>
+                <img src={UserIcon} alt=""/>
+            </Link>
+            <Link to='/search'>
+                <img src={SearchIcon} alt=""/>
             </Link>
             <Link to='/'>
-                <img src={Search} alt=""/>
+                <img src={LikeIcon} alt=""/>
             </Link>
             <Link to='/'>
-                <img src={Like} alt=""/>
-            </Link>
-            <Link to='/'>
-                <img src={ShopCart} alt=""/>
+                <img src={ShopCartIcon} alt=""/>
             </Link>
         </div>
       </div>

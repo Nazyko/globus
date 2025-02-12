@@ -1,4 +1,4 @@
-import "./Pagination.css"
+import "./Products.css"
 import { useEffect, useState } from "react";
 import { useProducts } from "../../hooks/useProducts";
 import { Center, Flex, Loader } from "@mantine/core";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import NextIcon from "../../assets/pagination/right.svg"
 import PrevIcon from "../../assets/pagination/left.svg"
 
-export const Pagination = () => {
+export const Products = () => {
   const limit = 12; 
   const [offset, setOffset] = useState(0);
   const { data, isLoading, isError, refetch } = useProducts(limit, offset);
@@ -24,7 +24,6 @@ export const Pagination = () => {
     setOffset((prev) => prev + limit)
   }
 
-  if (isLoading) return <Center h={500}><Loader color="black"/></Center>;
   if (isError) return <p>Ошибка загрузки</p>;
 
   return (
@@ -36,12 +35,15 @@ export const Pagination = () => {
             </Flex>
             <ul className="pagination__items">
                 {data?.data.items.map((item) => (
-                    <Link to={`/product/${item.id}`} key={item.id} className="pagination__item">
+                    <Link to={`/details/${item.id}`} key={item.id} className="pagination__item">
                         <img src={item.images[0].image}/>
                         <p>{item.name}</p>
                         <p>{item.price} sum</p>
                     </Link>
                 ))}
+                {
+                  isLoading && <Center h={500}><Loader color="black"/></Center>
+                }
             </ul>
             <Flex align='center' justify="flex-start" gap={16} mt={20}>
                 <button onClick={prevPage} className="pagination-control-btn">
