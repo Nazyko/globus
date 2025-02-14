@@ -8,9 +8,11 @@ import ShopCartIcon from "../../assets/navbar/shop-cart.svg"
 import { Link } from "react-router-dom"
 import { useState } from "react"
 import { CategoryList } from "../category/category-list/CategoryList"
+import { useAuth } from "../../hooks/useAuth"
 
 export const Navbar = () => {
   const [openCatalog, setOpenCatalog] = useState<boolean>(false)
+  const { isAuth } = useAuth()
 
   return (
     <div className="wrapper">
@@ -31,7 +33,7 @@ export const Navbar = () => {
             </div>
         </div>
         <div className="navbar__right">
-            <Link to='/login'>
+            <Link to={isAuth ? "/user": "/login"}>
                 <img src={UserIcon} alt=""/>
             </Link>
             <Link to='/search'>

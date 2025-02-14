@@ -1,7 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom'
-import { registration } from "../../service/AutthService"
+import { registration } from "../../service/AuthService"
 import { useMutation } from "@tanstack/react-query"
 
 export const Register = () => {
@@ -13,13 +13,18 @@ export const Register = () => {
     const [gender, setGender] = useState<string>("")
     const navigate = useNavigate()
 
-    const { mutate: register } = useMutation({
+    const { mutate: register, data } = useMutation({
         mutationKey: ['auth'],
         mutationFn: registration,
-        onSuccess: () => {
+    })
+
+    useEffect(() => {
+        if(data?.success === true && data.errMessage === null) {
+            localStorage.setItem("phone", data.data.user.phone)
             navigate("/verify")
         }
-    })
+        
+    }, [data, navigate])
 
     const handleSubmit = async () => {
         if(firstName && lastName && password && phone && dateOfBirth && gender) {
@@ -75,11 +80,16 @@ export const Register = () => {
                 </div>
                 <div className="register__input-box">
                     <label className="input-box__label">Телефон:</label>
+                    <label>
+                        
                     <input 
-                        type="tel" 
-                        placeholder="Введите Телефон" 
+                        type="tel"
+                        placeholder="998 90 123 45 67"
+                        minLength={9}
+                        maxLength={9} 
                         value={phone} 
                         onChange={(e) => setPhone(e.target.value)}/>
+                    </label>
                 </div>
                 <div className="register__input-box">
                     <label className="input-box__label">Пароль:</label>
