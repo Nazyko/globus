@@ -68,3 +68,20 @@ export interface GetMeResponse {
         }
     }
 }
+
+export interface UpdateUserDataResponse {
+    success: boolean;
+    errMessage: string | null;
+    errorCode: string | null;
+    data: {
+        user: {
+            id: number;
+            first_name: string;
+            last_name: string;
+            phone: string;
+            date_of_birth: string;
+            gender: string;
+            is_active: boolean;
+        }
+    }
+}

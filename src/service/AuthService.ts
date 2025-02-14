@@ -1,6 +1,7 @@
 import axios from "axios"
-import { LoginRequest, RegisterRequest } from "../types/request/Request"
-import { GetMeResponse, LoginResponse, RefreshTokenResponse, RegisterResponse, VerifyResponse } from "../types/response/AuthResponse"
+import { LoginRequest, RegisterRequest, UpdateRequest } from "../types/request/Request"
+import { GetMeResponse, LoginResponse, RefreshTokenResponse, RegisterResponse, UpdateUserDataResponse, VerifyResponse } from "../types/response/AuthResponse"
+import { api } from "../api/api"
 
 const baseURL = 'https://globus-nukus.uz'
 
@@ -88,3 +89,15 @@ export const getMe = async () => {
     }
 
 }
+
+export const updateUserData = async ({ id, ...credentials }: { id: number } & UpdateRequest) => {
+    try {
+      const response = await api.put<UpdateUserDataResponse>(`api/users/${id}`, credentials);
+      console.log(response.data);
+      
+      return response.data;
+    } catch (error) {
+      console.error(error);
+      throw error;
+    }
+};

@@ -3,10 +3,10 @@ import { useEffect, useState } from "react"
 import { getMe } from "../service/AuthService"
 
 
+
 export const useAuth = () => {
     const [ isAuth, setAuth ] = useState<boolean>(false)
     const queryClient = useQueryClient();
-
     
     const checkToken = () => !!localStorage.getItem('access');
 
@@ -15,9 +15,13 @@ export const useAuth = () => {
         queryFn: getMe,
         enabled: checkToken()
     })
-
     useEffect(() => {
-        setAuth(!!data);
+        if (data) {
+            setAuth(true);
+            localStorage.setItem("user", JSON.stringify(data.data.user))
+        } else {
+            setAuth(false);
+        }
     }, [data]);
 
     const logout = () => {
@@ -25,9 +29,8 @@ export const useAuth = () => {
         localStorage.removeItem('refreshToken');
         setAuth(false);
         queryClient.invalidateQueries({ queryKey: ['auth'] });
-        queryClient.removeQueries({ queryKey: ['auth'] }); // Очищаем данные пользователя
+        queryClient.removeQueries({ queryKey: ['auth'] }); 
     };
-
 
     return {
         isAuth,

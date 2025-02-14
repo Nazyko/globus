@@ -21,7 +21,7 @@ export const App = () => {
       try {
         const data = await refreshToken();
         if(data) {
-          localStorage.setItem("accessToken", data.data.token.access);
+          localStorage.setItem("access", data.data.token.access);
           await getMe();
         }
       } catch (error) {
@@ -44,7 +44,7 @@ export const App = () => {
             <Route path="/search" element={<Search />}/>
             <Route path="/details/:id" element={<Details />}/>
             <Route path="/login" element={<Login />}/>
-            <Route path="/user" element={<UserPage />}/>
+            <Route path="/user/*" element={<UserPage />}/>
             <Route path="/register" element={<Register />}/>
             <Route path="/verify" element={<Verify />}/>
             <Route path="*" element={<NotFound />}/>

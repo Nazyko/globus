@@ -1,0 +1,33 @@
+.user-aside {
+    width: 250px;
+    height: 265px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    line-height: 17.55px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+}
+
+.user-aside-link {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #DDDBDC;
+}
+
+.user-aside-link:hover {
+    font-weight: 500;
+    font-size: 17.8px;
+}
+
+.active {
+    font-weight: 500;
+    font-size: 17.8px;
+}
+
+.user-aside button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: left;
+}

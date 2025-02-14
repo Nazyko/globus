@@ -15,7 +15,7 @@ export const Navbar = () => {
   const { isAuth } = useAuth()
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{borderBottom: '1px solid #DDDDDD'}}>
       <div className="navbar">
         <div className="navbar__left">
             <div className="navbar__menu-burger">
