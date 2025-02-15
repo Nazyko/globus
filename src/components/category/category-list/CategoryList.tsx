@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./CategoryList.css"
-import { getCategoryById, getCategoryList } from '../../../service/ProductsService'
+import { getCategoryById, getCategoryList, getCategoryProducts } from '../../../service/ProductsService'
 import { useQuery } from '@tanstack/react-query'
 import { CategoryListResponse } from '../../../types/response/ProductResponse'
 import { Center, Flex, Loader } from '@mantine/core'
@@ -12,11 +12,18 @@ interface CategoryListProps {
 }
 
 export const CategoryList: React.FC<CategoryListProps> = ({ active, setActive }) => {
+    const limit = 20;
+    const [ offset ] = useState<number>(0)
 
     const { data, isLoading } = useQuery<CategoryListResponse>({
         queryKey: ['categories'],
         queryFn: getCategoryList,
     })
+
+    const getCategory = (id: number) => {
+        getCategoryById(id)
+        getCategoryProducts(id, offset, limit)
+    }
 
     return (
         <div className={active ? 'category': 'none'} onClick={() => setActive(false)}>
@@ -31,7 +38,7 @@ export const CategoryList: React.FC<CategoryListProps> = ({ active, setActive })
                             <Link 
                                 to={`/category/${category.id}`}
                                 key={category.id} 
-                                onClick={() => getCategoryById(category.id)}
+                                onClick={() => getCategory(category.id)}
                                 className="category-list__item">
                                     {category.name}
                             </Link>
@@ -39,7 +46,7 @@ export const CategoryList: React.FC<CategoryListProps> = ({ active, setActive })
                     )
                     }
                 </div>
-                {isLoading && <Center> <Loader /> </Center>}
+                {isLoading && <Center><Loader /></Center>}
             </div>
         </div>
   )

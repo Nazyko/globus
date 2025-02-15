@@ -24,12 +24,13 @@ export const Navbar = () => {
             <Link to='/' className="navbar__logo">
                 <img src={Logo} alt="" />
             </Link>
-            <button className="catalog-btn" onClick={() => setOpenCatalog(!openCatalog)}>Каталог</button>
+
             <div className="navbar__menu-list">
               <Link to='/'>О нас</Link>
               <Link to='/'>Доставка</Link>
               <Link to='/'>Оплата</Link>
               <Link to='/'>Контакты</Link>
+              <button className="catalog-btn" onClick={() => setOpenCatalog(!openCatalog)}>Каталог</button>
             </div>
         </div>
         <div className="navbar__right">

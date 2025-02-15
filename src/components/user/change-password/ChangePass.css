@@ -1,0 +1,56 @@
+.change-pass {
+    width: 961px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.change-pass_title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.6px;
+    letter-spacing: 0.2px;
+}
+
+.change-pass__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.change-pass__input {
+    width: 470px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.change-pass__input input {
+    padding: 13px 16px;
+    border: 1px solid #CBCBCB;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.change-pass__input input:focus {
+    border: 1px solid #000000;
+}
+
+.change-pass-btn {
+    margin-top: 10px;
+    width: 180px;
+    height: 47px;
+    padding: 15px;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 17.25px;
+    outline: none;
+    border: none;
+}
+
+.change-pass-btn:hover {
+    background-color: #505050;
+}

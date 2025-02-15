@@ -1,5 +1,5 @@
 import axios from "axios"
-import { LoginRequest, RegisterRequest, UpdateRequest } from "../types/request/Request"
+import { ChangePassVerifyRequest, ChangePasswordRequest, LoginRequest, RegisterRequest, UpdateRequest } from "../types/request/Request"
 import { GetMeResponse, LoginResponse, RefreshTokenResponse, RegisterResponse, UpdateUserDataResponse, VerifyResponse } from "../types/response/AuthResponse"
 import { api } from "../api/api"
 
@@ -101,3 +101,32 @@ export const updateUserData = async ({ id, ...credentials }: { id: number } & Up
       throw error;
     }
 };
+
+export const changePassword = async (credentials: ChangePasswordRequest) => {
+    try {
+        const response = await api.post(`api/users/password-change`, credentials)
+        return response.data
+    }
+    catch (error) {
+        console.error(error);
+    }
+}
+
+export const changePassVerify = async (credentials: ChangePassVerifyRequest) => {
+    try {
+        const response = await api.post(`api/users/password-change/verify`, credentials)
+        return response.data
+    } catch (error) {
+        console.error(error);
+        
+    }
+}
+
+export const getCash = async () => {
+    try {
+        const response = await api.get(`api/users/cashback`)
+        return response.data
+    } catch (error) {
+        console.error(error);
+    }
+}

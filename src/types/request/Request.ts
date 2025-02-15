@@ -19,3 +19,14 @@ export interface UpdateRequest {
     date_of_birth: string;
     gender: string;
 }
+
+export interface ChangePasswordRequest {
+    phone: string;
+    password: string;
+    password2: string;
+}
+
+export interface ChangePassVerifyRequest {
+    phone: string;
+    otp: string;
+}

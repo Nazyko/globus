@@ -1,4 +1,4 @@
-import { IProduct, ICategory } from "../interface/IProduct";
+import { IProduct, ICategory, ICategoryItem } from "../interface/IProduct";
 
 
 export interface CategoryListResponse {
@@ -15,7 +15,16 @@ export interface SingleCategoryResponse {
     errMessage: string | null;
     errorCode: string | null;
     data: {
-        categories: ICategory
+        categories: ICategory;
+    };
+}
+
+export interface GetCategoryProductsResponse {
+    success: boolean;
+    errMessage: string | null;
+    errorCode: string | null;
+    data: {
+        items: ICategoryItem[]
     }
 }
 

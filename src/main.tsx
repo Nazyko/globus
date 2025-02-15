@@ -10,7 +10,7 @@ const client = new QueryClient()
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={client}>
-      <MantineProvider>
+      <MantineProvider withCssVariables withGlobalClasses withStaticClasses>
         <App />
       </MantineProvider>
     </QueryClientProvider>

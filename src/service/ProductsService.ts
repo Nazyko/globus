@@ -1,5 +1,5 @@
 import axios from "axios"
-import { AllProductsResponse, CategoryListResponse, getSingleProductResponse, SearchResponse, SingleCategoryResponse } from "../types/response/ProductResponse"
+import { AllProductsResponse, CategoryListResponse, GetCategoryProductsResponse, getSingleProductResponse, SearchResponse, SingleCategoryResponse } from "../types/response/ProductResponse"
 
 const baseURL = 'https://globus-nukus.uz'
 
@@ -7,8 +7,14 @@ export const getCategoryList = async () => {
     const respose = await axios.get<CategoryListResponse>(`${baseURL}/api/categories`)    
     return respose.data
 }
+
 export const getCategoryById = async (id: number) => {
     const response = await axios.get<SingleCategoryResponse>(`${baseURL}/api/categories/${id}`)     
+    return response.data
+}
+
+export const getCategoryProducts = async (id: number, offset: number, limit: number) => {
+    const response = await axios.get<GetCategoryProductsResponse>(`${baseURL}/api/products?offset=${offset}&limit=${limit}&category=${id}`)     
     return response.data
 }
 
