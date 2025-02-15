@@ -66,7 +66,7 @@ export const Profile = () => {
 
   return (
     <div className="profile">
-      <h3 className="profile__title">Личные данные</h3>
+      <h1 className="profile__title">Личные данные</h1>
       <p>Заполните поля, чтобы облегчить повторный ввод при оформлении заказа.</p>
       <div className="profile__form">
 

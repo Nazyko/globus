@@ -15,25 +15,24 @@ export const ChangePass = () => {
   const [newPass2, setNewPass2] = useState<string>("")
   const [otp, setOtp] = useState<string>("")
 
-  const {mutate: change, data: changePass} = useMutation({
+  const { mutate: change, isSuccess } = useMutation({
     mutationKey: ['auth'],
     mutationFn: changePassword
   })
 
+  useEffect(() => {
+    if(isSuccess) {
+      open()
+    }
+  }, [isSuccess, open])
+
   const sendNewPass = () => {
     if(phone && newPass && newPass2) {
       change({phone, password: newPass, password2: newPass2})
-      open()
     }
-    open()
+    setNewPass("")
+    setNewPass2("")
   }
-
-  useEffect(() => {
-    if(changePass) {
-      open()
-    }
-  }, [changePass, open])
-  
 
   const {mutate: verify} = useMutation({
     mutationKey: ["auth"],
@@ -50,7 +49,7 @@ export const ChangePass = () => {
 
   return (
     <div className="change-pass">
-      <h3 className="change-pass_title">Изменить пароль</h3>
+      <h1 className="change-pass__title">Изменить пароль</h1>
       <div className="change-pass__container">
         <div className="change-pass__input">
           <label>Новый пароль:</label>

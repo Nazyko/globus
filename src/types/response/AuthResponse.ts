@@ -85,3 +85,24 @@ export interface UpdateUserDataResponse {
         }
     }
 }
+
+export interface ChangePasswordVerifyResponse {
+    success: boolean;
+    errMessage: string | null;
+    errorCode: string | null;
+    data: {
+        token: {
+            access: string;
+            refresh: string;
+        }
+    }
+}
+
+export interface GetCashResponse {
+    success: boolean;
+    errMessage: string | null;
+    errorCode: string | null;
+    data: {
+        cashback_balance: number;
+    }
+}

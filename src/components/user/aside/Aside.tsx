@@ -9,25 +9,25 @@ export const Aside = () => {
         to='/user'
         end
         className={({ isActive }) => isActive ? "user-aside-link active" : "user-aside-link"}>
-            Личные данные
+          Личные данные
       </NavLink>
       <NavLink 
         to='/user/orders' 
         end
         className={({ isActive }) => isActive ? "user-aside-link active" : "user-aside-link"}>
-            Заказы
+          Мои заказы
       </NavLink>
       <NavLink 
         to='/user/cash'
         end
         className={({ isActive }) => isActive ? "user-aside-link active" : "user-aside-link"}>
-            Мой кэшбэк
+          Мой кэшбэк
       </NavLink>
       <NavLink 
         to='/user/change-password' 
         end
         className={({ isActive }) => isActive ? "user-aside-link active" : "user-aside-link"}>
-            Смена пароля
+          Изменить пароль
       </NavLink>
       <button>Выйти</button>
     </div>

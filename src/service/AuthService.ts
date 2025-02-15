@@ -1,6 +1,6 @@
 import axios from "axios"
 import { ChangePassVerifyRequest, ChangePasswordRequest, LoginRequest, RegisterRequest, UpdateRequest } from "../types/request/Request"
-import { GetMeResponse, LoginResponse, RefreshTokenResponse, RegisterResponse, UpdateUserDataResponse, VerifyResponse } from "../types/response/AuthResponse"
+import { ChangePasswordVerifyResponse, GetCashResponse, GetMeResponse, LoginResponse, RefreshTokenResponse, RegisterResponse, UpdateUserDataResponse, VerifyResponse } from "../types/response/AuthResponse"
 import { api } from "../api/api"
 
 const baseURL = 'https://globus-nukus.uz'
@@ -114,17 +114,16 @@ export const changePassword = async (credentials: ChangePasswordRequest) => {
 
 export const changePassVerify = async (credentials: ChangePassVerifyRequest) => {
     try {
-        const response = await api.post(`api/users/password-change/verify`, credentials)
+        const response = await api.post<ChangePasswordVerifyResponse>(`api/users/password-change/verify`, credentials)
         return response.data
     } catch (error) {
         console.error(error);
-        
     }
 }
 
 export const getCash = async () => {
     try {
-        const response = await api.get(`api/users/cashback`)
+        const response = await api.get<GetCashResponse>(`api/users/cashback`)
         return response.data
     } catch (error) {
         console.error(error);
