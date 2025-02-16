@@ -13,8 +13,16 @@ import { Verify } from "./auth/verify/Verify"
 import { UserPage } from "./pages/UserPage"
 import { useEffect } from "react"
 import { getMe, refreshToken } from "./service/AuthService"
+import { useAuth } from "./hooks/useAuth"
 
 export const App = () => {
+  const { isAuth, refetch } = useAuth()
+
+  useEffect(() => {
+    if(isAuth) {
+      refetch()
+    }
+  }, [isAuth, refetch])
 
   useEffect(() => {
     const initAuth = async () => {
@@ -26,8 +34,8 @@ export const App = () => {
         }
       } catch (error) {
         console.error("Authentication failed", error);
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
+        localStorage.removeItem("access");
+        localStorage.removeItem("refresh");
       }
     };
 
@@ -44,10 +52,12 @@ export const App = () => {
             <Route path="/search" element={<Search />}/>
             <Route path="/details/:id" element={<Details />}/>
             <Route path="/login" element={<Login />}/>
-            <Route path="/user/*" element={<UserPage />}/>
             <Route path="/register" element={<Register />}/>
             <Route path="/verify" element={<Verify />}/>
             <Route path="*" element={<NotFound />}/>
+            <Route>
+              <Route path="/user/*" element={<UserPage />}/>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

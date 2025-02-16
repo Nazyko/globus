@@ -6,13 +6,19 @@ import SearchIcon from "../../assets/navbar/search.svg"
 import LikeIcon from "../../assets/navbar/like.svg"
 import ShopCartIcon from "../../assets/navbar/shop-cart.svg"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CategoryList } from "../category/category-list/CategoryList"
 import { useAuth } from "../../hooks/useAuth"
 
 export const Navbar = () => {
   const [openCatalog, setOpenCatalog] = useState<boolean>(false)
-  const { isAuth } = useAuth()
+  const { isAuth, refetch } = useAuth()
+
+  useEffect(() => {
+    if(!isAuth) {
+      refetch()
+    }
+  }, [isAuth, refetch])
 
   return (
     <div className="wrapper" style={{borderBottom: '1px solid #DDDDDD'}}>

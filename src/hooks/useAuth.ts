@@ -25,11 +25,10 @@ export const useAuth = () => {
     }, [data]);
 
     const logout = () => {
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
-        setAuth(false);
+        localStorage.clear()
         queryClient.invalidateQueries({ queryKey: ['auth'] });
         queryClient.removeQueries({ queryKey: ['auth'] }); 
+        setAuth(false);
     };
 
     return {

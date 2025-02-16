@@ -14,7 +14,7 @@ export const Register = () => {
     const navigate = useNavigate()
 
     const { mutate: register, data } = useMutation({
-        mutationKey: ['auth'],
+        mutationKey: ['register'],
         mutationFn: registration,
     })
 

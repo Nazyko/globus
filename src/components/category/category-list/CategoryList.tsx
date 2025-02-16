@@ -30,7 +30,6 @@ export const CategoryList: React.FC<CategoryListProps> = ({ active, setActive })
             <div className='category-inner'>
                 <Flex align='center' justify='space-between'>
                     <h3 className="category-title">Каталог</h3>
-                    <button onClick={() => setActive(false)} className='category__close-btn'>x</button>
                 </Flex>
                 <div className="category-list">
                     {Array.isArray(data?.data?.categories) && (

@@ -11,7 +11,7 @@ export const Verify = () => {
   const [timer, setTimer] = useState(60);
 
   const {mutate: verify, data } = useMutation({
-    mutationKey: ['auth'],
+    mutationKey: ['register'],
     mutationFn: verification
   })
 

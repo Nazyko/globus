@@ -25,7 +25,7 @@ export const CatalogPage = () => {
     <Flex mt={44}>
       <Flex className="wrapper catalog" direction='column' gap={24}>
         <h3 className="catalog-title">Каталог: {category.data.categories.name}</h3>
-        <Flex>
+        <Flex gap={20}>
           <CategoryAside min={min} max={max}/>
           <CategoryItems id={Number(id)}/>
         </Flex>
