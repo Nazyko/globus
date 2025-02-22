@@ -40,7 +40,7 @@ export const Navbar = () => {
             </div>
         </div>
         <div className="navbar__right">
-            <Link to={isAuth ? "/user": "/login"}>
+            <Link to="/user">
                 <img src={UserIcon} alt=""/>
             </Link>
             <Link to='/search'>
@@ -49,7 +49,7 @@ export const Navbar = () => {
             <Link to='/'>
                 <img src={LikeIcon} alt=""/>
             </Link>
-            <Link to='/'>
+            <Link to='/cart'>
                 <img src={ShopCartIcon} alt=""/>
             </Link>
         </div>

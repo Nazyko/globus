@@ -14,6 +14,9 @@ import { UserPage } from "./pages/UserPage"
 import { useEffect } from "react"
 import { getMe, refreshToken } from "./service/AuthService"
 import { useAuth } from "./hooks/useAuth"
+import { CartPage } from "./pages/CartPage"
+import { PrivateRoute } from "./pivate-route/PrivateRoute"
+
 
 export const App = () => {
   const { isAuth, refetch } = useAuth()
@@ -54,10 +57,11 @@ export const App = () => {
             <Route path="/login" element={<Login />}/>
             <Route path="/register" element={<Register />}/>
             <Route path="/verify" element={<Verify />}/>
-            <Route path="*" element={<NotFound />}/>
-            <Route>
+            <Route element={<PrivateRoute />}>
               <Route path="/user/*" element={<UserPage />}/>
+              <Route path="/cart" element={<CartPage />}/>
             </Route>
+            <Route path="*" element={<NotFound />}/>
           </Route>
         </Routes>
       </BrowserRouter>

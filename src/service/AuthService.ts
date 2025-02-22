@@ -62,7 +62,6 @@ export const refreshToken = async () => {
             const response = await axios.post<RefreshTokenResponse>(`${baseURL}/api/token/refresh`, {
                 refresh: token
             })
-            
             return response.data
         }
         catch (error) {
@@ -93,8 +92,6 @@ export const getMe = async () => {
 export const updateUserData = async ({ id, ...credentials }: { id: number } & UpdateRequest) => {
     try {
       const response = await api.put<UpdateUserDataResponse>(`api/users/${id}`, credentials);
-      console.log(response.data);
-      
       return response.data;
     } catch (error) {
       console.error(error);

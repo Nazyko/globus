@@ -10,6 +10,13 @@ export const Products = () => {
   const limit = 12; 
   const [offset, setOffset] = useState(0);
   const { data, isLoading, isError, refetch } = useProducts(limit, offset);
+  // const [currentPage, setCurrentPage] = useState(1);
+
+  // const total = data?.data.total_records;
+  // console.log("total:", total);
+
+  // const totalPage = Math.ceil(total / limit);
+  
 
   useEffect(() => {
     if(!offset){
@@ -30,15 +37,14 @@ export const Products = () => {
     <div className="wrapper">
         <div className="pagination">
             <Flex align='center' justify='space-between'>
-                <h2 className="pagination__title">Товары</h2>
-                
+              <h2 className="pagination__title">Товары</h2>
             </Flex>
             <ul className="pagination__items">
                 {data?.data.items.map((item) => (
                     <Link to={`/details/${item.id}`} key={item.id} className="pagination__item">
-                        <img src={item.images[0].image}/>
-                        <p>{item.name}</p>
-                        <p>{item.price} sum</p>
+                      <img src={item.images[0].image}/>
+                      <p>{item.name}</p>
+                      <p>{item.price} sum</p>
                     </Link>
                 ))}
                 {

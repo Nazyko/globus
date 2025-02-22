@@ -30,3 +30,8 @@ export interface ChangePassVerifyRequest {
     phone: string;
     otp: string;
 }
+
+export interface AddProductToCartReq {
+    product: number;
+    quantity: number;
+}
