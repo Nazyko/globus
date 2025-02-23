@@ -24,7 +24,7 @@ export const CartPage = () => {
   const totalQuantity = data?.data.cart.reduce((acc, item) => acc + item.quantity, 0) || 0;  
   
   
-  const { mutate: deleteItem } = useMutation({
+  const { mutate: deleteCartItem } = useMutation({
     mutationKey: ['cart'],
     mutationFn: deleteProductCart,
     onSuccess: () => refetch()
@@ -40,12 +40,9 @@ export const CartPage = () => {
     mutationKey: ['cart'],
     mutationFn: ({ id, credentials }: { id: number; credentials: AddProductToCartReq }) => 
       updateProductCart({id, ...credentials}),
+      onSuccess: () => refetch()
   });
 
-  const deleteCartItem = (id: number) => {
-    deleteItem(id)
-    refetch()
-  }
 
   const increment = (cartId: number, id: number, quantity: number) => {
     updateItem({
@@ -55,7 +52,6 @@ export const CartPage = () => {
         quantity: quantity + 1
       }
     })
-    refetch()
   }
 
   const decrement = (cartId: number, id: number, quantity: number) => {
@@ -70,7 +66,6 @@ export const CartPage = () => {
         }
       })
     }
-    refetch()
   }
 
   if(isLoading) return <Center h={500}><Loader color="black"/></Center>

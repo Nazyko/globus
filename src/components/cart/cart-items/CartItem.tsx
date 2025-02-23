@@ -4,7 +4,6 @@ import PlusIcon from "../../../assets/cart/plus.svg"
 import MinusIcon from "../../../assets/cart/minus.svg"
 import "./CartItems.css"
 import { ICart } from "../../../types/response/CartResponse"
-import { useEffect } from "react"
 
 
 interface CartItemProps {
@@ -28,17 +27,11 @@ interface CartItemProps {
 }
 
 export const CartItem:React.FC<CartItemProps> = ({
-  items, cartId, 
+  cartId, 
   productId, product_name, 
-  product_code, price, quantity, images,
-  refetch, increment, decrement, deleteCartItem
+  product_code, price, quantity, images, 
+  increment, decrement, deleteCartItem
 }) => {
-
-  useEffect(() => {
-    if(!items) {
-      refetch()
-    }
-  }, [items, refetch])
 
   return (
     <div className="cart-item">
