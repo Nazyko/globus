@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./CartTotal.css"
 
 interface CartTotalProps {
@@ -20,18 +21,14 @@ export const CartTotal:React.FC<CartTotalProps> = ({totalPrice, totalQuantity}) 
           <h3>Доставка:</h3>
           <span>{0}</span>
         </div>
-      </div>
-      <div className="total">
-        <div className="total__title">
+        <div className="amount__total">
           Итого:
           <span>{totalPrice}</span>
         </div>
-        <div className="total_checkout">
-          <button className="total__btn">Перейти к оформлению</button>
-          
-          <div className="total__link">
-            <a href="" className="">Ввести промокод</a>
-          </div>
+        <div className="amount_checkout">
+          <Link to='/checkout' className="amount__btn">
+            Перейти к оформлению
+          </Link>
         </div>
       </div>
     </div>

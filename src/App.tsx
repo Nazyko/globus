@@ -16,6 +16,7 @@ import { getMe, refreshToken } from "./service/AuthService"
 import { useAuth } from "./hooks/useAuth"
 import { CartPage } from "./pages/CartPage"
 import { PrivateRoute } from "./pivate-route/PrivateRoute"
+import { CheckoutPage } from "./pages/CheckoutPage"
 
 
 export const App = () => {
@@ -60,6 +61,7 @@ export const App = () => {
             <Route element={<PrivateRoute />}>
               <Route path="/user/*" element={<UserPage />}/>
               <Route path="/cart" element={<CartPage />}/>
+              <Route path="/checkout" element={<CheckoutPage />}/>
             </Route>
             <Route path="*" element={<NotFound />}/>
           </Route>

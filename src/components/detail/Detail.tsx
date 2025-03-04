@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@tanstack/react-query"
 import { getSingleProduct } from "../../service/ProductsService"
 import { useParams } from "react-router-dom"
 import { addProductToCart } from "../../service/CartService"
+import { notifications } from "@mantine/notifications"
 
 
 export const Detail = () => {
@@ -22,6 +23,10 @@ export const Detail = () => {
         addCart({
             product: id,
             quantity: 1
+        })
+        notifications.show({
+            title: 'Уведомления',
+            message: 'Товар добавлено в корзину',
         })
     }
       

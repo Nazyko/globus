@@ -73,7 +73,7 @@ export const CartPage = () => {
   return (
     <Flex direction='column' gap={32} pt={44} className="wrapper">
       <Flex justify='space-between'>
-      <Text w={500} size="xl" className="cart__title">
+      <Text size="xl" fw={500} className="cart__title">
         Корзина
       </Text>
       <Button

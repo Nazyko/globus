@@ -1,5 +1,5 @@
 import { Main } from "../components/main/Main"
-import { Products } from "../components/pagination/Products"
+import { Products } from "../components/products/Products"
 
 export const Home = () => {
   return (

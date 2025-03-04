@@ -35,3 +35,18 @@ export interface AddProductToCartReq {
     product: number;
     quantity: number;
 }
+
+export interface CreateCardReq {
+    card_number: string;
+    expire: string;
+}
+
+export interface VerifyCardReq {
+    token: string;
+    code: string
+}
+
+export interface CreateReceiptReq {
+    amount: number;
+    order_id: number;
+}

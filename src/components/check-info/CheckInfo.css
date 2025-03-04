@@ -1,0 +1,64 @@
+.check {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.check-info {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #DDDDDD;
+}
+
+.check-info__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 22.95px;
+    letter-spacing: 0.2px;
+}
+
+.check-info__box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.check-info__txt {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.check-info__txt label {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+}
+
+.check-info__txt div {
+    width: 474px;
+    padding: 14px;
+    border: 1px solid #CBCBCB;
+    color: #6A6A6A;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16.1px;
+    letter-spacing: 0%;
+}
+
+.check-info__txt input:focus {
+    border: 1px solid #000000;
+}
+
+.check-btn {
+    border: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 15px 194px;
+}
+
+.check-btn:hover {
+    background-color: #6A6A6A;
+}
